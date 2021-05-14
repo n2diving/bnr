@@ -11,22 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+  <%= form.text_field :title, autofocus: true, class: "form-control margin-bottom-md", placeholder: "Title"%>
+  <%= form.text_area :body, class: "form-control margin-bottom-md", placeholder: "Body"%>
+  <%#= form.select :user_id, options_for_select(User.all.pluck(:name), current_user), { prompt: 'Select Rate Period' }, class: "form-control margin-bottom-md" %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit "Save", class: "btn btn-primary btn-center" %>
 <% end %>

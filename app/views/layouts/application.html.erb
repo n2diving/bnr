@@ -24,6 +24,16 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
+          <%= form_for :query, url: posts_path, method: :get, html: { class: "form-inline my-2 my-lg-0 mr-sm-2" } do |form| %>
+            <%= form.text_field :text, placeholder: "Search", value: params.dig('query', 'body'), class: "form-control mr-sm-2" %>
+            <%= form.submit "Search", class: "btn btn-outline-success my-2 my-sm-0 mr-sm-2" %>
+
+            <% if params[:query] %>
+              <%= link_to "Clear Search", posts_path, class: "btn btn-outline-warning" %>
+            <% end %>
+          <% end  %>
+
+
           <% if current_user %>
             <li class="nav-item">
               <%= link_to 'Home', root_path, class: 'nav-link' %>
@@ -43,10 +53,6 @@
             </li>
           <% end %>
         </ul>
-        <!--<form class="form-inline my-2 my-lg-0">-->
-          <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-          <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-        <!--</form>-->
       </div>
     </nav>
 

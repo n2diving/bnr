@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <%= form.text_field :title, autofocus: true, class: "form-control margin-bottom-md", placeholder: "Title"%>
-  <%= form.text_area :body, class: "form-control margin-bottom-md", placeholder: "Body"%>
-  <%#= form.select :user_id, options_for_select(User.all.pluck(:name), current_user), { prompt: 'Select Rate Period' }, class: "form-control margin-bottom-md" %>
+  <%= form.text_field :title, autofocus: true, class: "form-control mb-sm-4", placeholder: "Title"%>
+  <%= form.text_area :body, class: "form-control mb-sm-4", placeholder: "Body"%>
+  <%#= form.select :user_id, options_for_select(User.all.pluck(:name), current_user), { prompt: 'Select Rate Period' }, class: "form-control mb-sm-4" %>
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <%= form.submit "Save", class: "btn btn-primary btn-center" %>

@@ -2,5 +2,8 @@
 @import "bootstrap";
 @import "mixins/bootstrap_overrides";
 @import "mixins/text_styling";
-@import "mixins/utilities";
 @import "toastr";
+
+.toast {
+  @include font-size(1.4);
+}

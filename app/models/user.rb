@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
+
+  #only validating non devise fields for now
+  validates_presence_of :name
+  validates_presence_of :expertise
 end
